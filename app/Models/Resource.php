@@ -12,10 +12,8 @@ use Illuminate\Database\Eloquent\Model;
  * @package App\Models
  *
  * @OA\Schema(
- *     schema="Resource",
- *     type="object",
- *     title="Resource",
- *     required={"id", "name", "type"},
+ *     schema="Resource", type="object",
+ *     title="Resource", required={"id", "name", "type"},
  *     @OA\Property(property="id", type="integer", readOnly=true, example=1),
  *     @OA\Property(property="name", type="string", example="Conference Room"),
  *     @OA\Property(property="type", type="string", example="room"),

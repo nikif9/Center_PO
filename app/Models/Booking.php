@@ -12,10 +12,8 @@ use Illuminate\Database\Eloquent\Model;
  * @package App\Models
  *
  * @OA\Schema(
- *     schema="Booking",
- *     type="object",
- *     title="Booking",
- *     required={"id", "resource_id", "user_id", "start_time", "end_time"},
+ *     schema="Booking", type="object",
+ *     title="Booking", required={"id", "resource_id", "user_id", "start_time", "end_time"},
  *     @OA\Property(property="id", type="integer", readOnly=true, example=1),
  *     @OA\Property(property="resource_id", type="integer", example=1),
  *     @OA\Property(property="user_id", type="integer", example=2),

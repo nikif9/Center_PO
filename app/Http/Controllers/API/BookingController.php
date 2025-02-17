@@ -36,11 +36,8 @@ class BookingController extends Controller
      * Создает новое бронирование.
      * 
      * @OA\Post(
-     *     path="/api/bookings",
-     *     operationId="createBooking",
-     *     tags={"Bookings"},
-     *     summary="Создание бронирования",
-     *     description="Создает новое бронирование для ресурса",
+     *     path="/api/bookings", operationId="createBooking", tags={"Bookings"},
+     *     summary="Создание бронирования", description="Создает новое бронирование для ресурса",
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(
@@ -51,15 +48,8 @@ class BookingController extends Controller
      *             @OA\Property(property="end_time", type="string", format="date-time", example="2025-02-17T11:00:00Z")
      *         )
      *     ),
-     *     @OA\Response(
-     *         response=201,
-     *         description="Бронирование создано успешно",
-     *         @OA\JsonContent(ref="#/components/schemas/Booking")
-     *     ),
-     *     @OA\Response(
-     *         response=422,
-     *         description="Ошибка валидации"
-     *     )
+     *     @OA\Response(response=201, description="Бронирование создано успешно", @OA\JsonContent(ref="#/components/schemas/Booking")),
+     *     @OA\Response( response=422,description="Ошибка валидации")
      * )
      * @param StoreBookingRequest $request
      * @return \Illuminate\Http\JsonResponse
@@ -74,26 +64,11 @@ class BookingController extends Controller
      * Отменяет бронирование по его ID.
      * 
      * @OA\Delete(
-     *     path="/api/bookings/{id}",
-     *     operationId="deleteBooking",
-     *     tags={"Bookings"},
-     *     summary="Отмена бронирования",
-     *     description="Отменяет бронирование по его ID",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         description="ID бронирования",
-     *         required=true,
-     *         @OA\Schema(type="integer")
-     *     ),
-     *     @OA\Response(
-     *         response=204,
-     *         description="Бронирование успешно отменено"
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="Бронирование не найдено"
-     *     )
+     *     path="/api/bookings/{id}", operationId="deleteBooking", tags={"Bookings"},
+     *     summary="Отмена бронирования", description="Отменяет бронирование по его ID",
+     *     @OA\Parameter(name="id", in="path", description="ID бронирования", required=true, @OA\Schema(type="integer")),
+     *     @OA\Response(response=204, description="Бронирование успешно отменено"),
+     *     @OA\Response(response=404, description="Бронирование не найдено")
      * )
      * @param int $id
      * @return \Illuminate\Http\JsonResponse
